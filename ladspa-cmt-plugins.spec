@@ -1,6 +1,6 @@
 %define		_name cmt
 Summary:	A collection of LADSPA plugins
-Summary(pl):	Kolekcja wtyczek do LADSPA
+Summary(pl):	Kolekcja wtyczek LADSPA
 Name:		ladspa-cmt-plugins
 Version:	1.15
 Release:	0.1
@@ -18,8 +18,9 @@ The Computer Music Toolkit (CMT) is a collection of LADSPA plugins for
 use with software synthesis and recording packages on Linux.
 
 %description -l pl
-Computer Music Toolkit jest kolekcj± wtyczek dla LADSPA do u¿ytku z
-programami syntezy programowej i nagrywaj±cymi pod Linuxem.
+Computer Music Toolkit jest kolekcj± wtyczek LADSPA do u¿ytku z
+syntezatorami programowymi i programami nagrywaj±cymi d¼wiêk pod
+Linuxem.
 
 %prep
 %setup -q -n %{_name}
