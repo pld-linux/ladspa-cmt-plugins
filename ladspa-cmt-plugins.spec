@@ -3,7 +3,7 @@ Summary:	A collection of LADSPA plugins from Computer Music Toolkit
 Summary(pl):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
 Version:	1.15
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
