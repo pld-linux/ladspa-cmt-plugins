@@ -1,6 +1,6 @@
 %define		_name cmt
-Summary:	A collection of LADSPA plugins
-Summary(pl):	Kolekcja wtyczek LADSPA
+Summary:	A collection of LADSPA plugins from Computer Music Toolkit
+Summary(pl):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
 Version:	1.15
 Release:	0.1
@@ -11,6 +11,8 @@ Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
 Patch0:		%{name}-makefile.patch
 URL:		http://www.ladspa.org/
 BuildRequires:	ladspa-devel
+BuildRequires:	libstdc++-devel
+Requires:	ladspa-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,22 +22,22 @@ use with software synthesis and recording packages on Linux.
 %description -l pl
 Computer Music Toolkit jest kolekcj± wtyczek LADSPA do u¿ytku z
 syntezatorami programowymi i programami nagrywaj±cymi d¼wiêk pod
-Linuxem.
+Linuksem.
 
 %prep
 %setup -q -n %{_name}
 %patch0 -p1
 
 %build
-cd src
-%{__make} OPTFLAGS="%{rpmcflags}"
+%{__make} -C src \
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_libdir}/ladspa
+install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
 
-cd src
-%{__make} DESTDIR="$RPM_BUILD_ROOT" install
+%{__make} install -C src \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
