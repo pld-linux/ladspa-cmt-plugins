@@ -30,15 +30,15 @@ Linuksem.
 
 %build
 %{__make} -C src \
-	OPTFLAGS="%{rpmcflags}" \
-	INSTALL_PLUGINS_DIR=%{libdir}/ladspa
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
 
 %{__make} install -C src \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	INSTALL_PLUGINS_DIR=%{_libdir}/ladspa
 
 %clean
 rm -rf $RPM_BUILD_ROOT
