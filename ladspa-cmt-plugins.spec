@@ -1,6 +1,6 @@
 %define		_name cmt
 Summary:	A collection of LADSPA plugins from Computer Music Toolkit
-Summary(pl.UTF-8):   Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
+Summary(pl.UTF-8):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
 Version:	1.15
 Release:	1
