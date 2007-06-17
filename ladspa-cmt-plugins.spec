@@ -9,6 +9,7 @@ Group:		Applications/Sound
 Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
 # Source0-md5:	aa2f0609aca8b698625d86170c426e2c
 Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-compile.patch
 URL:		http://www.ladspa.org/
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
@@ -27,6 +28,7 @@ Linuksem.
 %prep
 %setup -q -n %{_name}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -C src \
