@@ -2,12 +2,12 @@
 Summary:	A collection of LADSPA plugins from Computer Music Toolkit
 Summary(pl.UTF-8):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
-Version:	1.15
+Version:	1.16
 Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
-# Source0-md5:	aa2f0609aca8b698625d86170c426e2c
+# Source0-md5:	15a875e5aaf79c209c223babfb41cb1c
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-compile.patch
 URL:		http://www.ladspa.org/
@@ -32,13 +32,14 @@ Linuksem.
 
 %build
 %{__make} -C src \
+	CXX="%{__cxx}" \
 	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
 
-%{__make} install -C src \
+%{__make} -C src install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	INSTALL_PLUGINS_DIR=%{_libdir}/ladspa
 
@@ -48,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README doc/*.html
-%attr(755,root,root) %{_libdir}/ladspa/*.so
+%attr(755,root,root) %{_libdir}/ladspa/cmt.so
