@@ -1,26 +1,15 @@
-diff -aurN cmt.orig/src/makefile cmt/src/makefile
---- cmt.orig/src/makefile	2002-12-19 21:52:51.000000000 +0100
-+++ cmt/src/makefile	2003-06-19 17:13:15.000000000 +0200
-@@ -5,15 +5,15 @@
- # Change this if you want to install somewhere else. In particularly
- # you may wish to remove the middle "local/" part.
- 
--INSTALL_PLUGINS_DIR	=	/usr/local/lib/ladspa/
-+INSTALL_PLUGINS_DIR	=	/usr/lib/ladspa/
- 
- ###############################################################################
- #
+--- cmt/src/makefile.orig	2007-11-06 11:25:34.000000000 +0100
++++ cmt/src/makefile	2008-07-20 21:56:56.050036383 +0200
+@@ -11,7 +11,7 @@
  # GENERAL
  #
  
--INCLUDES	=	-I/usr/local/include/
--CFLAGS		=	$(INCLUDES) -Wall -Werror -O3 -fPIC
-+INCLUDES	=	-I/usr/include/
-+CFLAGS		=	$(INCLUDES) -Wall -Werror -fPIC $(OPTFLAGS)
+-CFLAGS		=	$(INCLUDES) -Wall -O3 -fPIC
++CFLAGS		=	$(INCLUDES) -Wall -fPIC $(OPTFLAGS)
  CXXFLAGS	=	$(CFLAGS)
  PLUGIN_LIB	=	../plugins/cmt.so
  
-@@ -74,7 +74,7 @@
+@@ -72,7 +72,7 @@
  
  install:	$(PLUGIN_LIB)
  	-strip $(PLUGIN_LIB)
