@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
 Version:	1.16
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
 # Source0-md5:	15a875e5aaf79c209c223babfb41cb1c
