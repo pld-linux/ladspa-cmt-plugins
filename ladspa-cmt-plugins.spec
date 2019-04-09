@@ -1,13 +1,12 @@
-%define		_name cmt
 Summary:	A collection of LADSPA plugins from Computer Music Toolkit
 Summary(pl.UTF-8):	Kolekcja wtyczek LADSPA z projektu Computer Music Toolkit
 Name:		ladspa-cmt-plugins
-Version:	1.16
+Version:	1.17
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
-Source0:	http://www.ladspa.org/download/%{_name}_src_%{version}.tgz
-# Source0-md5:	15a875e5aaf79c209c223babfb41cb1c
+Source0:	http://www.ladspa.org/download/cmt_%{version}.tgz
+# Source0-md5:	ce10250b30219ee8392a97266e95fa16
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-compile.patch
 URL:		http://www.ladspa.org/
@@ -26,7 +25,7 @@ syntezatorami programowymi i programami nagrywającymi dźwięk pod
 Linuksem.
 
 %prep
-%setup -q -n %{_name}
+%setup -q -n cmt_%{version}
 %patch0 -p1
 %patch1 -p1
 

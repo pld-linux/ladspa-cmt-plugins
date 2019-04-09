@@ -1,18 +1,18 @@
---- cmt/src/makefile.orig	2007-11-06 11:25:34.000000000 +0100
-+++ cmt/src/makefile	2008-07-20 21:56:56.050036383 +0200
+--- cmt_1.17/src/Makefile.orig	2019-04-09 19:07:19.010095393 +0200
++++ cmt_1.17/src/Makefile	2019-04-09 19:08:13.183135246 +0200
 @@ -11,7 +11,7 @@
  # GENERAL
  #
  
--CFLAGS		=	$(INCLUDES) -Wall -O3 -fPIC
-+CFLAGS		=	$(INCLUDES) -Wall -fPIC $(OPTFLAGS)
+-CFLAGS		=	$(INCLUDES) -Wall -Werror -O2 -fPIC
++CFLAGS		=	$(INCLUDES) -Wall -Werror -fPIC $(OPTFLAGS)
  CXXFLAGS	=	$(CFLAGS)
  PLUGIN_LIB	=	../plugins/cmt.so
  
-@@ -72,7 +72,7 @@
+@@ -76,7 +76,7 @@
+ 		$(PLUGIN_OBJECTS)					
  
  install:	$(PLUGIN_LIB)
- 	-strip $(PLUGIN_LIB)
 -	cp $(PLUGIN_LIB) $(INSTALL_PLUGINS_DIR)
 +	cp $(PLUGIN_LIB) $(DESTDIR)$(INSTALL_PLUGINS_DIR)
  
