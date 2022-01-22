@@ -9,7 +9,13 @@
  CXXFLAGS	=	$(CFLAGS)
  PLUGIN_LIB	=	../plugins/cmt.so
  
-@@ -76,7 +76,7 @@
+@@ -70,13 +70,12 @@ $(PLUGIN_LIB):	$(PLUGIN_OBJECTS) gcc_exp
+ 		$(CFLAGS)						\
+ 		-fvisibility=hidden					\
+ 		-fvisibility-inlines-hidden				\
+-		-s							\
+ 		-Wl,--version-script=gcc_exports.map			\
+ 		-o $(PLUGIN_LIB)					\
  		$(PLUGIN_OBJECTS)					
  
  install:	$(PLUGIN_LIB)
